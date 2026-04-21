@@ -33,7 +33,7 @@
     </form>
     <div class="text-center mt-5">
         <p class="text-muted small">¿Nuevo en Mascotapp?
-            <a href="{{ route('auth.register') }}" class="text-primary fw-bold text-decoration-none">Crea una cuenta</a>
+            <a href="{{ route('register') }}" class="text-primary fw-bold text-decoration-none">Crea una cuenta</a>
         </p>
     </div>
 @endsection

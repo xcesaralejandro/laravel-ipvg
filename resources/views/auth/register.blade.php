@@ -60,7 +60,7 @@
 
     <div class="text-center mt-4">
         <p class="text-muted small">¿Ya tienes cuenta?
-            <a href="{{ route('auth.login') }}" class="text-primary fw-bold text-decoration-none">Inicia sesión</a>
+            <a href="{{ route('login') }}" class="text-primary fw-bold text-decoration-none">Inicia sesión</a>
         </p>
     </div>
 @endsection
