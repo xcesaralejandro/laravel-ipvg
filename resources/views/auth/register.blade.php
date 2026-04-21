@@ -53,7 +53,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-lg w-100 shadow-sm fw-bold border-0"
-                style="border-radius: 12px; padding: 12px; background-color: #00b894;">
+                style="border-radius: 12px; padding: 10px; background-color: #00b894;">
             Registrarme
         </button>
     </form>

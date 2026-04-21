@@ -22,3 +22,35 @@ a:hover {
 .text-primary:hover {
     color: #0d8a6a !important;
 }
+
+a.btn {
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+
+/* Clase base para una transición suave de color */
+.btn-subtle-hover {
+    transition: background-color 0.25s ease-in-out;
+    border: none !important;
+}
+
+/* Hover para 'Ver Ficha' (Un gris un poco más oscuro) */
+.btn-ficha-hover:hover {
+    background-color: #f1f3f5 !important;
+}
+
+/* Hover para Editar */
+.btn-edit-hover:hover {
+    background-color: #dee2e6 !important;
+}
+
+/* Hover para Eliminar (Un rojo apenas más intenso) */
+.btn-delete-hover:hover {
+    background-color: #fecaca !important;
+}
+
+/* Botón Agregar (Un verde un poco más oscuro) */
+.btn-add-hover:hover {
+    background-color: #1a6d2d !important;
+}

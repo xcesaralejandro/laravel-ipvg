@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Pet extends Model
 {
     use SoftDeletes;
-    
+
     protected $table = 'pets';
 
     protected $fillable = [
