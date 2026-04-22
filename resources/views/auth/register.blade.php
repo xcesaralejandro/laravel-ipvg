@@ -10,45 +10,45 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label class="form-label small fw-bold text-secondary">Nombre</label>
-                <input type="text" name="name" class="form-control bg-light border-0 shadow-none"
+                <input type="text" name="name" value="{{ old('name') }}" class="form-control bg-light border-0 shadow-none"
                        placeholder="Ej: Juan" style="border-radius: 12px; padding: 10px;" required>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label class="form-label small fw-bold text-secondary">Apellido</label>
-                <input type="text" name="surname" class="form-control bg-light border-0 shadow-none"
+                <input type="text" name="surname" value="{{ old('surname') }}" class="form-control bg-light border-0 shadow-none"
                        placeholder="Ej: Pérez" style="border-radius: 12px; padding: 10px;" required>
             </div>
         </div>
 
         <div class="mb-3">
             <label class="form-label small fw-bold text-secondary">Correo Electrónico</label>
-            <input type="email" name="email" class="form-control bg-light border-0 shadow-none"
+            <input type="email" name="email" value="{{ old('email') }}" class="form-control bg-light border-0 shadow-none"
                    placeholder="correo@ejemplo.com" style="border-radius: 12px; padding: 10px;" required>
         </div>
 
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label class="form-label small fw-bold text-secondary">Género</label>
-                <select name="gender" class="form-select bg-light border-0 shadow-none"
+                <select name="gender" value="{{ old('gender') }}" class="form-select bg-light border-0 shadow-none"
                         style="border-radius: 12px; padding: 10px;" required>
-                    <option value="" selected disabled>Selecciona...</option>
-                    <option value="male">Masculino</option>
-                    <option value="female">Femenino</option>
-                    <option value="other">Otro</option>
+                    <option value="" disabled {{ old('gender') ? '' : 'selected' }}>Selecciona...</option>
+                    <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Masculino</option>
+                    <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>Femenino</option>
+                    <option value="other" {{ old('gender') == 'other' ? 'selected' : '' }}>Otro</option>
                 </select>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label class="form-label small fw-bold text-secondary">Fecha de nacimiento</label>
-                <input type="date" name="birth_date" class="form-control bg-light border-0 shadow-none"
+                <input type="date" name="birth_date" value="{{ old('birth_date') }}" class="form-control bg-light border-0 shadow-none"
                        style="border-radius: 12px; padding: 10px;" required>
             </div>
         </div>
 
         <div class="mb-4">
             <label class="form-label small fw-bold text-secondary">Contraseña</label>
-            <input type="password" name="password" class="form-control bg-light border-0 shadow-none"
+            <input type="password" name="password" value="{{ old('password') }}" class="form-control bg-light border-0 shadow-none"
                    placeholder="Crea una clave segura" style="border-radius: 12px; padding: 10px;" required>
         </div>
         @if(session('was_created'))
