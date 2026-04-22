@@ -5,7 +5,7 @@
 @section('auth_subtitle', 'Comienza a gestionar la salud de tus mascotas')
 
 @section('auth_form')
-    <form action="#" method="POST">
+    <form action="{{ route('register.store') }}" method="POST">
         @csrf
         <div class="row">
             <div class="col-md-6 mb-3">
@@ -51,7 +51,18 @@
             <input type="password" name="password" class="form-control bg-light border-0 shadow-none"
                    placeholder="Crea una clave segura" style="border-radius: 12px; padding: 10px;" required>
         </div>
-
+        @if(isset($was_created) && $was_created)
+            <p>Tu cuenta ha sido creada con éxito</p>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <button type="submit" class="btn btn-primary btn-lg w-100 shadow-sm fw-bold border-0"
                 style="border-radius: 12px; padding: 10px; background-color: #00b894;">
             Registrarme
