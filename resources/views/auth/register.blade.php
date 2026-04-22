@@ -51,17 +51,15 @@
             <input type="password" name="password" class="form-control bg-light border-0 shadow-none"
                    placeholder="Crea una clave segura" style="border-radius: 12px; padding: 10px;" required>
         </div>
-        @if(isset($was_created) && $was_created)
-            <p>Tu cuenta ha sido creada con éxito</p>
+        @if(session('was_created'))
+            <p style="color: green; font-weight: bold;">Tu cuenta ha sido creada con éxito 🎉</p>
         @endif
         @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li style="color: red;">{{ $error }}</li>
+                @endforeach
+            </ul>
         @endif
         <button type="submit" class="btn btn-primary btn-lg w-100 shadow-sm fw-bold border-0"
                 style="border-radius: 12px; padding: 10px; background-color: #00b894;">

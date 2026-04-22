@@ -24,7 +24,6 @@ class AuthController extends Controller
             'gender' => 'required',
             'birth_date' => 'required'
         ]);
-        
         User::create([
             'name' => $request->name,
             'surname' => $request->surname,
@@ -33,6 +32,6 @@ class AuthController extends Controller
             'gender' => $request->gender,
             'birth_date' => $request->birth_date,
         ]);
-        return redirect()->route('register', ['was_created', true]);
+        return redirect()->route('register')->with('was_created', true);
     }
 }
