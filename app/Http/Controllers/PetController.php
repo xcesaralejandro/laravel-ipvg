@@ -31,6 +31,15 @@ class PetController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'       => 'required|string|max:255',
+            'species'    => 'required|string|max:255',
+            'birth_date' => 'required|date|before:tomorrow',
+            'gender'     => 'required|in:male,female',
+            'weight'     => 'required|numeric|min:0',
+            'color'      => 'required|string|max:100',
+            'photo'      => 'nullable|string',
+        ]);
         $pet = Pet::create([
             'user_id' => Auth::id(),
             'name' => $request->name,
@@ -55,9 +64,7 @@ class PetController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-    }
+    public function edit(string $id) {}
 
     /**
      * Update the specified resource in storage.
