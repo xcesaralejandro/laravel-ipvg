@@ -14,5 +14,4 @@ Route::post('/login', [AuthController::class, 'check'])->name('login.check');
 Route::get('/register', [AuthController::class, 'RegisterPage'])->name('register');
 Route::post('/register', [AuthController::class, 'store'])->name('register.store');
 
-Route::get('/pets', [PetController::class, 'index'])->name('pet.index')
-->middleware('auth');
+Route::resource('/pets', PetController::class)->middleware('auth');

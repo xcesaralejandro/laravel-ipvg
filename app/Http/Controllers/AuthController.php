@@ -8,15 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function LoginPage(){
+    public function LoginPage()
+    {
         return view('auth.login');
     }
 
-    public function RegisterPage(){
+    public function RegisterPage()
+    {
         return view('auth.register');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'surname' => 'required',
@@ -36,7 +39,8 @@ class AuthController extends Controller
         return redirect()->route('register')->with('was_created', true);
     }
 
-    public function check(Request $request){
+    public function check(Request $request)
+    {
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -45,9 +49,9 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ];
-        if(Auth::attempt($credentials)){
-            return redirect()->route('pet.index');
-        }else{
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('pets.index');
+        } else {
             return redirect()->route('login')
                 ->with('is_failed', true)
                 ->withInput($request->except('password'));
