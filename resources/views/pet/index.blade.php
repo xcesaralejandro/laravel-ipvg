@@ -57,14 +57,14 @@
                         <form action="{{ route('pets.destroy', $pet->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este registro?');">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" 
+                        <button type="submit"
                                 class="btn btn-light d-flex align-items-center justify-content-center btn-subtle-hover btn-delete-hover"
-                                title="Eliminar" 
+                                title="Eliminar"
                                 style="width: 40px; height: 40px; border-radius: 10px; background-color: #fee2e2; color: #dc3545; border: none;">
                             <span style="font-size: 1.2rem;">🗑️</span>
                         </button>
                     </form>
-                        
+
                     </div>
                 </div>
             </div>
