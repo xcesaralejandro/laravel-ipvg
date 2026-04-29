@@ -50,7 +50,7 @@
                             Ver Ficha
                         </a>
 
-                        <a href="#" class="btn btn-light d-flex align-items-center justify-content-center btn-subtle-hover btn-edit-hover"
+                        <a href="{{ route('pets.edit', $pet->id) }}" class="btn btn-light d-flex align-items-center justify-content-center btn-subtle-hover btn-edit-hover"
                            title="Editar" style="width: 40px; height: 40px; border-radius: 10px; background-color: #e9ecef; color: #495057;">
                            <small>✏️</small>
                         </a>
