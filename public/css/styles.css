@@ -1,5 +1,5 @@
- .page-wrapper {
-    background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);;
+.page-wrapper {
+    background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
@@ -28,29 +28,28 @@ a.btn {
     transition: all 0.1s ease-in-out;
 }
 
-
-/* Clase base para una transición suave de color */
-.btn-subtle-hover {
-    transition: background-color 0.25s ease-in-out;
+.btn {
+    border-radius: 12px;
+    padding: 10px;
     border: none !important;
 }
-
-/* Hover para 'Ver Ficha' (Un gris un poco más oscuro) */
-.btn-ficha-hover:hover {
-    background-color: #f1f3f5 !important;
+.btn-primary {
+    background: #10ac84 !important;
 }
 
-/* Hover para Editar */
-.btn-edit-hover:hover {
-    background-color: #dee2e6 !important;
+.btn-primary:hover {
+    background: #0d8a6a !important;
 }
 
-/* Hover para Eliminar (Un rojo apenas más intenso) */
-.btn-delete-hover:hover {
-    background-color: #fecaca !important;
-}
-
-/* Botón Agregar (Un verde un poco más oscuro) */
-.btn-add-hover:hover {
-    background-color: #1a6d2d !important;
+.btn-back {
+    width: 41px;
+    height: 41px;
+    font-weight: bolder !important;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff !important;
+    color: #10ac84;
+    border-radius: 50%;
 }

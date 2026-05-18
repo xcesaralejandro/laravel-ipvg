@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MedicalVisitsController;
 use App\Http\Controllers\PetController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,4 @@ Route::get('/register', [AuthController::class, 'RegisterPage'])->name('register
 Route::post('/register', [AuthController::class, 'store'])->name('register.store');
 
 Route::resource('/pets', PetController::class)->middleware('auth');
+Route::resource('/pets/{pet_id}/medical-visits', MedicalVisitsController::class)->middleware('auth');
